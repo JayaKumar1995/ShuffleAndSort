@@ -1,0 +1,163 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+/* color codes */
+:root {
+    --dark-gray-color: #2f454e;
+    --skyBlue-color: #72c3dc;
+    --dark-blue-color: #2b8ead;
+    --light-gray-color: #bfbfbf;
+    --dimBlue-color: #6f98a8;
+    --dim-gray-color: #efefef;
+    --white-color: #ffffff;
+    --mat-black-color: #333333;
+    --black-color: #000000;
+}
+
+/* root container */
+.root-container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 45px auto 45px;
+    grid-row-gap: 10px;
+}
+
+/* header block */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+}
+
+/* cards */
+.grid-item {
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* button element */
+.btn {
+    background-color: var(--skyBlue-color);
+    color: #ffffff;
+    border: 1px solid var(--skyBlue-color);
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 4px var(--dark-blue-color);
+    width: 120px;
+    height: 35px;
+    margin: 10px;
+    user-select: none;
+}
+
+/* desktop version */
+@media only screen and (min-width: 641px) {
+    .root-container {
+        background-color: var(--dim-gray-color);
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #main-pane {
+        display: grid;
+        grid-template-columns: 80% 20%;
+    }
+
+    #action-pane {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-item-1 {
+        background-color: var(--dimBlue-color);
+    }
+
+    .grid-item-2 {
+        background-color: var(--dark-blue-color);
+    }
+
+    .grid-item-3 {
+        background-color: var(--dark-gray-color);
+    }
+
+    .grid-item-4 {
+        background-color: var(--light-gray-color);
+    }
+}
+
+/* mobile  version */
+@media only screen and (max-width: 641px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-row-gap: 5px;
+        grid-auto-rows: auto;
+        margin: 0 15px;
+    }
+
+    #main-pane {
+        display: grid;
+        grid-template-rows: 65px auto;
+    }
+
+    #action-pane {
+        display: flex;
+        justify-content: center;
+        order: 1;
+    }
+
+    #cards-pane {
+        order: 2;
+    }
+
+    .grid-item {
+        color: var(--black-color);
+        background-color: var(--dim-gray-color);
+    }
+
+    .grid-item-1 {
+        border-left: 10px solid var(--dimBlue-color);
+    }
+
+    .grid-item-2 {
+        border-left: 10px solid var(--dark-blue-color);
+    }
+
+    .grid-item-3 {
+        border-left: 10px solid var(--dark-gray-color);
+    }
+
+    .grid-item-4 {
+        border-left: 10px solid var(--light-gray-color);
+    }
+
+    .header {
+        background: var(--mat-black-color);
+        color: var(--white-color);
+    }
+}
+
+/* helper classes */
+
+.text-center {
+    text-align: center;
+}
+
+/* pseudo-selectors */
+
+.btn:active {
+    transform: translateY(4px);
+}
